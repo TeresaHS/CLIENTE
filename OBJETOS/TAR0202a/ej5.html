@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h2>5. Escribe una función filtrarPorTipo(obj, tipo) que devuelva un nuevo objeto solo con las propiedades cuyo valor es del tipo indicado.</h2>
+
+    <h2>let datos = {nombre: "Ana", edad: 25, activo: true, salario: 1200 };
+    console.log(filtrarPorTipo(datos, "number"));
+    // { edad: 25, salario: 1200 }</h2>
+
+    <script>
+
+        function filtrarPorTipo(obj, tipo){
+            
+            let datosPorTipo = {};
+
+            for (let clave in obj) {
+                // tiene que ser con [] en el for in para acceder
+                if (typeof obj[clave] === tipo) {
+                    datosPorTipo[clave] = obj[clave];
+                }
+            }
+
+            return datosPorTipo;
+        }
+
+        let datos = {nombre: "Ana", edad: 25, activo: true, salario: 1200 };
+
+        console.log(filtrarPorTipo(datos, "number"));
+        // { edad: 25, salario: 1200 }
+
+    </script>
+</body>
+</html>

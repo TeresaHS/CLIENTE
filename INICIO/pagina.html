@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGINA</title>
+
+    <!--<script>
+        alert("Script en el head");
+    </script>-->
+
+</head>
+<body>
+    <p id="mensaje"></p>
+
+    <!--<script>
+        alert("Script en el body");
+    </script>-->
+
+    <!--<script src="javascript.js"></script> <!-- src: Ruta al archivo JavaScript externo -->
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <script>
+        // Información general
+        console.log("Mensaje informativo");
+
+        // Advertencias
+        console.warn("¡Cuidado con esto!");
+
+        // Errores
+        console.error("Algo salió mal");
+
+        // Medición de tiempo
+        console.time("miProceso");
+        // Código que queremos medir
+        console.timeEnd("miProceso");
+
+        // Tablas para datos estructurados
+        console.table([
+        {nombre: "Ana", edad: 25},
+        {nombre: "Juan", edad: 30}
+        ]);
+    </script>
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <script>
+        // Inicio del grupo principal con una etiqueta descriptiva
+        console.group("Detalles del Usuario");
+
+        console.log("Nombre: Ana Pérez");
+        console.log("Edad: 30");
+        console.log("Rol: Desarrolladora");
+
+        // Es posible anidar subgrupos dentro de otro grupo
+        console.group("Permisos de acceso");
+        console.log("Lectura: Sí");
+        console.log("Escritura: Sí");
+        console.log("Administrador: No");
+        console.groupEnd(); // Cierra el subgrupo
+
+        console.groupEnd(); // Cierra el grupo principal
+
+        console.log("Este mensaje está fuera del grupo.");
+    </script>
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <script>
+        let edad=25;
+
+        console.log(edad);
+        console.log(typeof edad);
+
+        edad="teresa";
+        console.log(edad);
+        console.log(typeof edad);
+
+        console.log(typeof null);
+
+        typeof(x=42);
+
+        console.log(typeof(x=42));
+    </script>
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <script>
+
+        const id01 = 2;
+        const id02 = 2;
+
+        console.log(id01 === id02); // true (tienen el mismo valor y tipo)
+
+        const id1 = Symbol("id");
+        const id2 = Symbol("id");
+
+        console.log(id1 === id2); //  false (son símbolos únicos, aunque tengan la misma descripción)
+
+    </script>
+
+<!-- //////////////////////////////////////////////////////////////////////// -->
+
+    <script>
+        function increment(x) {
+            x++;
+        }
+        
+        let num = 5;
+        increment(num);
+        console. log(num);
+    </script>
+
+    <script>
+        function increment(object) {
+            object.num++;
+        }
+
+        let object = { num: 5 };
+        increment(object);
+        console.log(object);
+    </script>
+
+</body>
+</html>
