@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 03</title>
+</head>
+<body>
+    <script>
+
+        /* Se ingresan un conjunto de 5 alturas de personas por teclado. Mostrar la altura
+        promedio de las personas. */
+
+        let alturas = [];
+
+        for(let i=0; i<5; i++) alturas[i] = parseInt(prompt("Altura "+i+":"));
+
+        console.log(alturas.reduce((acc, val) => acc + val, 0)/alturas.length);
+        
+    </script>
+</body>
+</html>

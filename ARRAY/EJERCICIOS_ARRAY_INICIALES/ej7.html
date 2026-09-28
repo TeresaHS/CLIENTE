@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 07</title>
+</head>
+<body>
+    <script>
+
+        /* Realizar un programa que permita cargar dos listas de 3 valores cada una.
+        Informar con un mensaje cual de las dos listas tiene un valor acumulado mayor
+        (mensajes 'Lista 1 mayor', 'Lista 2 mayor', 'Listas iguales')
+        Tener en cuenta que puede haber dos o más estructuras repetitivas en un
+        algoritmo. */
+
+        /* OPCION 1 */
+
+        let lista1 = [5,5,5];
+        let lista2 = [1,2,3];
+
+        let suma1 = lista1.reduce((acc, val) => acc + val,0);
+        let suma2 = lista2.reduce((acc, val) => acc + val,0);
+
+        console.log(lista1);
+        console.log(lista2);
+        console.log(suma1 > suma2 ? "Lista 1 mayor" : suma1 < suma2 ? "Lista 2 mayor" : "Listas iguales");
+
+        /* OPCION 2 */
+
+        lista1 = [5,5,5];
+        lista2 = [1,2,3];
+
+        console.log(lista1);
+        console.log(lista2);
+        console.log(lista1.reduce((acc, val) => acc + val,0) > lista2.reduce((acc, val) => acc + val,0) ? "Lista 1 mayor" : lista1.reduce((acc, val) => acc + val,0) < lista2.reduce((acc, val) => acc + val,0) ? "Lista 2 mayor" : "Listas iguales");
+        
+
+        lista1 = [1,2,3];
+        lista2 = [5,5,5];
+
+        console.log(lista1);
+        console.log(lista2);
+        console.log(lista1.reduce((acc, val) => acc + val,0) > lista2.reduce((acc, val) => acc + val,0) ? "Lista 1 mayor" : lista1.reduce((acc, val) => acc + val,0) < lista2.reduce((acc, val) => acc + val,0) ? "Lista 2 mayor" : "Listas iguales");
+        
+
+        lista1 = [1,2,3];
+        lista2 = [1,2,3];
+
+        console.log(lista1);
+        console.log(lista2);
+        console.log(lista1.reduce((acc, val) => acc + val,0) > lista2.reduce((acc, val) => acc + val,0) ? "Lista 1 mayor" : lista1.reduce((acc, val) => acc + val,0) < lista2.reduce((acc, val) => acc + val,0) ? "Lista 2 mayor" : "Listas iguales");
+        
+    </script>
+</body>
+</html>

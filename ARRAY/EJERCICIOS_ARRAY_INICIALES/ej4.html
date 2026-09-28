@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 04</title>
+</head>
+<body>
+    <script>
+
+        /* Realizar un programa que pida la carga de dos vectores numéricos. Obtener la
+        suma de los dos vectores, dicho resultado guardarlo en un tercer vector del
+        mismo tamaño. Sumar componente a componente. */
+
+        let vector1 = [1,1,1,1];
+        let vector2 = [2,3,4,5];
+
+        // en el mapeo puedo poner +1 valor, con ()
+        let vector3 = vector1.map((valor, i) => valor + vector2[i]);
+
+        console.log(vector3);
+        
+    </script>
+</body>
+</html>

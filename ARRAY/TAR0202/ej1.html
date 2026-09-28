@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO TAR0202</title>
+</head>
+<body>
+    <script>
+
+        let agenda = {
+            
+            nombre: "Teresa",
+            tareas: [],
+
+        agregarTarea(descripcion, prioridad) {
+
+            this.tareas.push({
+                descripcion: descripcion,
+                prioridad: prioridad,
+                estado: "pendiente"
+            });
+
+        },
+
+        listarTareas() {
+
+            if (this.tareas.length === 0) console.log("No hay tareas en la agenda.");
+            else this.tareas.forEach((tarea) => console.log(tarea));
+
+            // Otra forma de mostrarlo:
+
+            /*this.tareas.forEach((tarea, indice) => {
+                console.log(`[${indice}] ${tarea.descripcion}`);
+                console.log(`Prioridad: ${tarea.prioridad}`);
+                console.log(`Estado: ${tarea.estado}`);
+            });*/
+        },
+
+        marcarCompletada(indice) {
+
+            if (indice >= 0 && indice < this.tareas.length) this.tareas[indice].estado = "completada";
+            else console.log("Indice incorrecto");
+
+        },
+
+        eliminarTarea(indice) {
+
+            if (indice >= 0 && indice < this.tareas.length) this.tareas.splice(indice, 1);
+            else console.log("Indice incorrecto");
+
+        },
+
+        listarPendientes() {
+
+            const pendientes = this.tareas.filter(t => t.estado === "pendiente");
+
+            if (pendientes.length === 0) console.log("No hay tareas pendientes.");
+            else pendientes.forEach((tarea, indice) => console.log(tarea));
+                
+                // Otra forma de mostrarlo:
+
+                /*pendientes.forEach((tarea, indice) => { 
+                    console.log(`[${indice}] ${tarea.descripcion}`);
+                    console.log(`Prioridad: ${tarea.prioridad}`);
+                }*/
+            
+        },
+
+        ordenarPorPrioridad() {
+
+            this.tareas.sort((a, b) => a.prioridad - b.prioridad);
+
+        }
+    };
+
+    // Para pruebas:
+    agenda.agregarTarea("Tarea 1", 1);
+    agenda.agregarTarea("Tarea 2", 3);
+    agenda.agregarTarea("Tarea 3", 2);
+
+    console.log("LISTADO INICIAL");
+    agenda.listarTareas();
+    console.log("---------------------------------------------------------------------");
+    console.log("MARCAR COMPLETADA 1");
+    agenda.marcarCompletada(1);
+    console.log("---------------------------------------------------------------------");
+    console.log("ORDENAR POR PRIORIDAD");
+    agenda.ordenarPorPrioridad();
+    console.log("---------------------------------------------------------------------");
+    console.log("LISTADO TAREAS");
+    agenda.listarTareas();
+    console.log("---------------------------------------------------------------------");
+    console.log("LISTADO PENDIENTES");
+    agenda.listarPendientes();
+    console.log("---------------------------------------------------------------------");
+    console.log("ELIMINAR TAREA 0");
+    agenda.eliminarTarea(0);
+    console.log("---------------------------------------------------------------------");
+    console.log("LISTAR TAREAS");
+    agenda.listarTareas();
+
+
+/* 
+        
+1. Crea un programa en JavaScript que gestione una pequeña “agenda de tareas”. Para ello:
+
+Define un objeto agenda que tenga las siguientes propiedades iniciales:
+
+nombre : nombre de la agenda o del usuario.
+tareas (array) : inicialmente vacío, para almacenar las tareas
+
+2. Al objeto agenda, añade los siguientes métodos:
+
+agregarTarea(descripcion, prioridad): 
+función que recibe una descripción (string) y una prioridad (número, por ejemplo 1 = alta, 2 = media, 3 = baja). 
+Crea un objeto tarea con esas propiedades y un estado inicial "pendiente", y lo añade al arreglo tareas.
+
+listarTareas(): 
+función que recorre el array tareas y escribe por consola (o devuelve) cada tarea con su descripción, prioridad y estado.
+
+marcarCompletada(indice): 
+función que, dado el índice de la tarea en el arreglo (numero entero), cambia el estado de esa tarea a "completada". 
+Si el índice no es válido, emitir un mensaje de error o manejarlo de forma segura.
+
+eliminarTarea(indice): 
+función que elimina la tarea del array tareas en la posición dada (por ejemplo con splice). 
+Igual que antes, manejar casos inválidos.
+
+listarPendientes(): 
+función que filtra las tareas cuyo estado sea "pendiente" y las muestra.
+
+3. Añade también un método ordenarPorPrioridad() que reorganice el arreglo tareas de modo que las tareas de 
+prioridad más alta (números menores) queden primero.
+
+*/
+
+    </script>
+</body>
+</html>

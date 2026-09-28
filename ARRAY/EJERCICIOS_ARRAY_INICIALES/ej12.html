@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 12</title>
+</head>
+<body>
+    <script>
+
+        /* Se cuenta con la siguiente información:
+        Las edades de 5 estudiantes del turno mañana.
+        Las edades de 6 estudiantes del turno tarde.
+        Las edades de 11 estudiantes del turno noche.
+        Las edades de cada estudiante deben ingresarse por teclado.
+        a) Obtener el promedio de las edades de cada turno (tres promedios).
+        b) Imprimir dichos promedios (promedio de cada turno).
+        c) Mostrar por pantalla un mensaje que indique cual de los tres turnos
+        tiene un promedio de edades mayor. */
+
+        
+        let edadesTurnoM = [];
+
+        alert("MAÑANA");
+        for(let i=0; i<5; i++) edadesTurnoM[i] = parseInt(prompt("Edad estudiante "+i+":"));
+
+        let edadesTurnoT = [];
+
+        alert("TARDE");
+        for(let i=0; i<6; i++) edadesTurnoT[i] = parseInt(prompt("Edad estudiante "+i+":"));
+
+        let edadesTurnoN = [];
+
+        alert("NOCHE");
+        for(let i=0; i<11; i++) edadesTurnoN[i] = parseInt(prompt("Edad estudiante "+i+":"));
+        
+        /*
+        Para pruebas:
+
+        let edadesTurnoM = [18,19,20,21,22];
+        let edadesTurnoT = [18,19,20,21,22,23];
+        let edadesTurnoN = [18,19,20,21,22,23,24,25,26,27,28];
+        */
+
+        let promedioM = edadesTurnoM.reduce((acc,val) => acc+val,0)/edadesTurnoM.length;
+        let promedioT = edadesTurnoT.reduce((acc,val) => acc+val,0)/edadesTurnoT.length;
+        let promedioN = edadesTurnoN.reduce((acc,val) => acc+val,0)/edadesTurnoN.length;
+        
+        console.log(promedioM);
+        console.log(promedioT);
+        console.log(promedioN);
+
+        console.log(promedioM > promedioT && promedioM > promedioN ? "Mañana" : promedioT > promedioN ? "Tarde" : "Noche");
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 02</title>
+</head>
+<body>
+    <script>
+
+        /* Escribir un programa que lea 10 notas de alumnos y nos informe cuántos tienen
+        notas mayores o iguales a 7 y cuántos menores. */
+
+        let notas = [];
+
+        for(let i=0; i<10; i++) notas[i] = parseInt(prompt("Nota "+i+":"));
+
+        console.log("Notas mayores o igual a 7: "+notas.filter(x => x >= 7)); 
+        console.log("Notas menores de 7: "+notas.filter(x => x < 7));
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 05</title>
+</head>
+<body>
+    <script>
+
+        /* Desarrollar un programa que permita ingresar un vector de 8 elementos, e informe:
+        El valor acumulado de todos los elementos del vector.
+        El valor acumulado de los elementos del vector que sean mayores a 36.
+        Cantidad de valores mayores a 50. */
+
+        let vector = [];
+
+        for(let i=0; i<8; i++) vector[i] = parseInt(prompt("Elemento "+i+":"));
+
+        console.log(vector.reduce((acc, val) => acc + val, 0));
+        console.log(vector.filter(x => x>36).reduce((acc, val) => acc + val, 0));
+        console.log(vector.filter(x => x>50).length);
+        
+    </script>
+</body>
+</html>

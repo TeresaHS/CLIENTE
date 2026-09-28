@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 09</title>
+</head>
+<body>
+    <script>
+
+        /* Realizar el siguiente ejercicio utilizando Arrays asociativo.
+        En un banco se procesan datos de las cuentas corrientes de sus clientes. De cada cuenta
+        corriente se conoce: número de cuenta, nombre del cliente y saldo actual. El ingreso de
+        datos debe finalizar al ingresar un valor negativo en el número de cuenta.
+        Se pide confeccionar un programa que lea los datos de las cuentas corrientes e informe:
+
+        a) De cada cuenta: número de cuenta, nombre del cliente y estado de la cuenta
+        según su saldo, sabiendo que:
+        Estado de la cuenta 'Acreedor' si el saldo es >0.
+        'Deudor' si el saldo es <0.
+        'Nulo' si el saldo es =0.
+
+        b) La suma total de los saldos acreedores. */
+
+        let cuentas = [];
+        
+        let seguir = true;
+
+        do{
+
+            let numeroCuenta = prompt("Numero de cuenta (negativo para salir):");
+            numeroCuenta = parseInt(numeroCuenta);
+
+            if (numeroCuenta >= 0) {
+                
+                let nombreCliente = prompt("Ingrese nombre del cliente:");
+                let saldoActual = parseFloat(prompt("Ingrese saldo actual:"));
+
+                cuentas.push({
+                    numeroCuenta: numeroCuenta,
+                    nombreCliente: nombreCliente,
+                    saldoActual: saldoActual
+                });
+            }
+            else seguir = false;
+
+        }while(seguir);
+
+        cuentas.forEach(v => console.log( v.saldoActual > 0 ? "Acreedor" : v.saldoActual < 0 ? "Deudor" : "Nulo"));
+        
+        /*
+        Para prueba:
+
+        cuentas = [
+            { numeroCuenta: 1001, nombreCliente: "Juan Pérez",      saldoActual: 1500.50 },
+            { numeroCuenta: 1002, nombreCliente: "María López",     saldoActual: -320.00 },
+            { numeroCuenta: 1003, nombreCliente: "Carlos Ruiz",     saldoActual: 0 },
+            { numeroCuenta: 1004, nombreCliente: "Ana Torres",      saldoActual: 2450.75 },
+            { numeroCuenta: 1005, nombreCliente: "Luis Gómez",      saldoActual: -80.25 },
+            { numeroCuenta: 1006, nombreCliente: "Sofía Ramírez",   saldoActual: 500.00 },
+            { numeroCuenta: 1007, nombreCliente: "Pedro Castillo",  saldoActual: -1200.00 },
+            { numeroCuenta: 1008, nombreCliente: "Lucía Fernández", saldoActual: 0 },
+            { numeroCuenta: 1009, nombreCliente: "Diego Morales",   saldoActual: 300.10 },
+            { numeroCuenta: 1010, nombreCliente: "Elena Vargas",    saldoActual: -50.00 }
+        ];
+        */
+
+        
+        
+    </script>
+</body>
+</html>

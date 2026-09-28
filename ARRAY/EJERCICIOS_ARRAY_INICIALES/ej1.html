@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 01</title>
+</head>
+<body>
+    <script>
+
+        /*Desarrollar un programa que solicite la carga de 10 números e imprima la suma
+        de los últimos 5 valores ingresados.*/
+
+        let nums = [];
+
+        for(let i=0; i<10; i++) nums[i] = parseInt(prompt("Numero "+i+":"));
+
+        console.log(nums.slice(nums.length-5,nums.length).reduce((acc, val) => acc + val, 0));
+
+    </script>
+</body>
+</html>

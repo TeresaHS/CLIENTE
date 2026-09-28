@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 11</title>
+</head>
+<body>
+    <script>
+
+        /* Se realiza la carga de 10 valores enteros por teclado. Se desea conocer:
+        a) La cantidad de valores negativos ingresados.
+        b) La cantidad de valores positivos ingresados.
+        c) La cantidad de múltiplos de 15.
+        d) El valor acumulado de los números ingresados que son pares. */
+
+        let valores = [];
+
+        for(let i=0; i<10; i++) valores[i] = parseInt(prompt("Elemento "+i+":"));
+
+        console.log(valores.filter(x => x<0).length);
+        console.log(valores.filter(x => x>0).length);
+        console.log(valores.filter(x => x % 15 === 0).length);
+        console.log(valores.filter(x => x % 2 === 0).reduce((acc,val) => acc + val,0));
+        
+    </script>
+</body>
+</html>
