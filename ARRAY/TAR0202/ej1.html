@@ -26,15 +26,11 @@
         listarTareas() {
 
             if (this.tareas.length === 0) console.log("No hay tareas en la agenda.");
-            else this.tareas.forEach((tarea) => console.log(tarea));
-
-            // Otra forma de mostrarlo:
-
-            /*this.tareas.forEach((tarea, indice) => {
+            else this.tareas.forEach((tarea, indice) => {
                 console.log(`[${indice}] ${tarea.descripcion}`);
                 console.log(`Prioridad: ${tarea.prioridad}`);
                 console.log(`Estado: ${tarea.estado}`);
-            });*/
+            });
         },
 
         marcarCompletada(indice) {
@@ -56,14 +52,10 @@
             const pendientes = this.tareas.filter(t => t.estado === "pendiente");
 
             if (pendientes.length === 0) console.log("No hay tareas pendientes.");
-            else pendientes.forEach((tarea, indice) => console.log(tarea));
-                
-                // Otra forma de mostrarlo:
-
-                /*pendientes.forEach((tarea, indice) => { 
+            else pendientes.forEach((tarea, indice) => {
                     console.log(`[${indice}] ${tarea.descripcion}`);
                     console.log(`Prioridad: ${tarea.prioridad}`);
-                }*/
+                });
             
         },
 
