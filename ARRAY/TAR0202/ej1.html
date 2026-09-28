@@ -25,7 +25,7 @@
 
         listarTareas() {
 
-            if (this.tareas.length === 0) console.log("No hay tareas en la agenda.");
+            if (this.tareas.length === 0) console.log("No hay tareas");
             else this.tareas.forEach((tarea, indice) => {
                 console.log(`[${indice}] ${tarea.descripcion}`);
                 console.log(`Prioridad: ${tarea.prioridad}`);
@@ -42,7 +42,7 @@
 
         eliminarTarea(indice) {
 
-            if (indice >= 0 && indice < this.tareas.length) this.tareas.splice(indice, 1);
+            if (indice >= 0 && indice < this.tareas.length) this.tareas.splice(indice, 1); //solo borra 1
             else console.log("Indice incorrecto");
 
         },
@@ -51,7 +51,7 @@
 
             const pendientes = this.tareas.filter(t => t.estado === "pendiente");
 
-            if (pendientes.length === 0) console.log("No hay tareas pendientes.");
+            if (pendientes.length === 0) console.log("No hay tareas pendientes");
             else pendientes.forEach((tarea, indice) => {
                     console.log(`[${indice}] ${tarea.descripcion}`);
                     console.log(`Prioridad: ${tarea.prioridad}`);
@@ -61,6 +61,7 @@
 
         ordenarPorPrioridad() {
 
+            // de menor a mayor numero
             this.tareas.sort((a, b) => a.prioridad - b.prioridad);
 
         }
@@ -91,41 +92,6 @@
     console.log("---------------------------------------------------------------------");
     console.log("LISTAR TAREAS");
     agenda.listarTareas();
-
-
-/* 
-        
-1. Crea un programa en JavaScript que gestione una pequeña “agenda de tareas”. Para ello:
-
-Define un objeto agenda que tenga las siguientes propiedades iniciales:
-
-nombre : nombre de la agenda o del usuario.
-tareas (array) : inicialmente vacío, para almacenar las tareas
-
-2. Al objeto agenda, añade los siguientes métodos:
-
-agregarTarea(descripcion, prioridad): 
-función que recibe una descripción (string) y una prioridad (número, por ejemplo 1 = alta, 2 = media, 3 = baja). 
-Crea un objeto tarea con esas propiedades y un estado inicial "pendiente", y lo añade al arreglo tareas.
-
-listarTareas(): 
-función que recorre el array tareas y escribe por consola (o devuelve) cada tarea con su descripción, prioridad y estado.
-
-marcarCompletada(indice): 
-función que, dado el índice de la tarea en el arreglo (numero entero), cambia el estado de esa tarea a "completada". 
-Si el índice no es válido, emitir un mensaje de error o manejarlo de forma segura.
-
-eliminarTarea(indice): 
-función que elimina la tarea del array tareas en la posición dada (por ejemplo con splice). 
-Igual que antes, manejar casos inválidos.
-
-listarPendientes(): 
-función que filtra las tareas cuyo estado sea "pendiente" y las muestra.
-
-3. Añade también un método ordenarPorPrioridad() que reorganice el arreglo tareas de modo que las tareas de 
-prioridad más alta (números menores) queden primero.
-
-*/
 
     </script>
 </body>
