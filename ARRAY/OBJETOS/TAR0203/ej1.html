@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAREA 0203</title>
+</head>
+<body>
+    <script>
+
+        /**********************************************************************************************
+        *               EJERCICIOS PARA PRACTICAR EL ACCESO A OBJETOS DENTRO DE UN ARRAY              *
+        *                    Cada actividad tiene dos opciones, ambas válidas                         *
+        **********************************************************************************************/
+
+        /**********************************************************************************************
+         *     - ACT 1 - Realizar una función para filtrar los jugadores que tengan más de 20 goles   *
+         *     - ACT 2 - Obtener el total de goles de todos los jugadores                             *
+         *     - ACT 3 - Ordenar los jugadores por asistencias (de mayor a menor)   	              *
+         *     - ACT 4 - Contar tarjetas rojas y amarillas por equipo                                 *
+         *     - ACT 5 - Obtener el promedio de goles por partido para cada jugador                   *
+         *     - ACT 6 - Encontrar el jugador con más asistencias                                     *
+         *     - ACT 7 - Listar los nombres de los jugadores por posición                             *
+         *********************************************************************************************/
+
+        const futbolistas = [
+            {
+                nombre: "Lionel Messi",
+                equipo: "Inter Miami",
+                posicion: "Delantero",
+                goles: 40,
+                asistencias: 18,
+                partidosJugados: 30,
+                tarjetaAmarilla: 3,
+                tarjetaRoja: 0
+            },
+            {
+                nombre: "Cristiano Ronaldo",
+                equipo: "Al Nassr",
+                posicion: "Delantero",
+                goles: 35,
+                asistencias: 12,
+                partidosJugados: 28,
+                tarjetaAmarilla: 5,
+                tarjetaRoja: 1
+            },
+            {
+                nombre: "Kevin De Bruyne",
+                equipo: "Manchester City",
+                posicion: "Mediocampista",
+                goles: 10,
+                asistencias: 22,
+                partidosJugados: 25,
+                tarjetaAmarilla: 2,
+                tarjetaRoja: 0
+            },
+            {
+                nombre: "Virgil van Dijk",
+                equipo: "Liverpool",
+                posicion: "Defensa",
+                goles: 5,
+                asistencias: 3,
+                partidosJugados: 27,
+                tarjetaAmarilla: 4,
+                tarjetaRoja: 1
+            },
+            {
+                nombre: "Thibaut Courtois",
+                equipo: "Real Madrid",
+                posicion: "Portero",
+                goles: 0,
+                asistencias: 1,
+                partidosJugados: 29,
+                tarjetaAmarilla: 2,
+                tarjetaRoja: 0
+            },
+            {
+                nombre: "Erling Haaland",
+                equipo: "Manchester City",
+                posicion: "Delantero",
+                goles: 45,
+                asistencias: 5,
+                partidosJugados: 30,
+                tarjetaAmarilla: 3,
+                tarjetaRoja: 0
+            },
+            {
+                nombre: "Kylian Mbappé",
+                equipo: "Paris Saint-Germain",
+                posicion: "Delantero",
+                goles: 42,
+                asistencias: 10,
+                partidosJugados: 29,
+                tarjetaAmarilla: 2,
+                tarjetaRoja: 0
+            },
+            {
+                nombre: "Neymar Jr",
+                equipo: "Al-Hilal",
+                posicion: "Delantero",
+                goles: 20,
+                asistencias: 15,
+                partidosJugados: 26,
+                tarjetaAmarilla: 4,
+                tarjetaRoja: 1
+            }
+        ];
+
+        // ACT 1 - Realizar una función para filtrar los jugadores que tengan más de 20 goles
+
+        function filtrarJugadores(){
+            console.log(futbolistas.filter(x => x.goles > 20));
+        }
+        
+        filtrarJugadores();
+
+        // ACT 2 - Obtener el total de goles de todos los jugadores
+
+        function obtenerTotalGoles(){
+            console.log(futbolistas.reduce((acc, val) => acc + val.goles,0));
+        }
+
+        obtenerTotalGoles();
+
+        // ACT 3 - Ordenar los jugadores por asistencias (de mayor a menor)
+
+        function ordenarJugadoresAsistencia(){
+            console.log(futbolistas.sort((a,b) => b.asistencias - a.asistencias));
+        }
+
+        ordenarJugadoresAsistencia();
+
+        // ACT 4 - Contar tarjetas rojas y amarillas por equipo
+
+        function sacarEquipos(){
+            
+            let equipos = [];
+
+            futbolistas.forEach(futbolista => {if(!equipos.includes(futbolista.equipo)) equipos.push(futbolista.equipo)});
+
+            return equipos;
+        }
+
+        function contarTarjetasRojasAmarillas(){
+            
+            sacarEquipos().forEach(equipo => console.log(`${equipo}: ` + futbolistas.reduce((acc, val) => {if(val.equipo === equipo) return acc + 1; return acc },0)));
+            //                                                                                              compruebo que es el equipo que esto buscando ahora y tengo que hacer return del if
+            //                                                                                              después debo hacer otro return del acumulador porque ya he hecho la cuenta dentro del if, 
+            //                                                                                              sino seria como hacer la cuenta dos veces
+
+        }
+
+        contarTarjetasRojasAmarillas();
+
+        // ACT 5 - Obtener el promedio de goles por partido para cada jugador
+
+        function promedioGolesPartido(){
+            futbolistas.forEach(futbolista => console.log(`${futbolista.nombre}: ` + futbolista.goles/futbolista.partidosJugados));
+        }
+
+        promedioGolesPartido();
+
+        // ACT 6 - Encontrar el jugador con más asistencias
+
+        function jugadorMasAsistencias(){
+            console.log(futbolistas.sort((a,b) => a.asistencias - b.asistencias)[0]);
+        }
+
+        jugadorMasAsistencias();
+
+        // ACT 7 - Listar los nombres de los jugadores por posición
+
+        function sacarPosiciones(){
+            let posiciones = [];
+
+            futbolistas.forEach(futbolista => {if(!posiciones.includes(futbolista.posicion)) posiciones.push(futbolista.posicion)});
+
+            return posiciones;
+        }
+
+        function listarNombreJugadoresPosicion(){
+            
+            sacarPosiciones().forEach(posicion => {
+                console.log(`${posicion}: `);
+                futbolistas.forEach(futbolista => {if(futbolista.posicion === posicion) console.log(`${futbolista.nombre} `);});
+            });
+        }
+        
+        listarNombreJugadoresPosicion();
+
+    </script>
+</body>
+</html>
