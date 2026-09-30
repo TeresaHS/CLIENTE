@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 2 TAR0203</title>
+</head>
+<body>
+    <script src="ej2.js"></script>
+    <script>
+
+        /* EJEMPLO DE FUTBOLISTA
+        nombre: "Cristiano Ronaldo",
+        equipo: "Manchester United",
+        liga: "Premier League",
+        posicion: "Delantero",
+        golesMarcados: 22,
+        partidosJugados: 27,
+        fechaNacimiento: new Date("1985-02-05"),
+        nacionalidad: "Portugal",
+        esInternacional: true,
+        estadisticas: {
+        asistencias: 15,
+        faltasSufridas: 31,
+        tarjetas: [
+            {
+            tipo: "amarilla",
+            cantidad: 3,
+            },
+            {
+            tipo: "roja",
+            cantidad: 0,
+            },
+        ],
+        minutosJugados: 2500,
+        },
+        */
+
+        console.log(jugadores);
+
+        /**
+         * Ejercicio 1.
+         * Crea una funcion que muestre por consola los nombres de los jugadores con posicion 'Mediocampista'
+         * @return NO
+         */
+
+        console.log("EJERCICIO 1 -------------------------------------------------------------------------------");
+
+        function nombresJugadoresMediocampistas(){
+            console.log(jugadores.filter(futbolista => futbolista.posicion === "Mediocampista").map(futbolista => futbolista.nombre));
+        }
+
+        nombresJugadoresMediocampistas();
+
+        /**
+         * Ejercicio 2.
+         * Crea una función que muestre por consola los nombres de lo jugadores que hayan jugado 30 o mas partidos.
+         * @return NO
+         */
+
+        console.log("EJERCICIO 2 -------------------------------------------------------------------------------");
+
+        function nombresJugadores30PartidosOMas(){
+            console.log(jugadores.filter(futbolista => futbolista.partidosJugados >= 30).map(futbolista => futbolista.nombre));
+        }
+
+        nombresJugadores30PartidosOMas();
+
+        /**
+         * Ejercicio 3.
+         * Crea una funcion que muestra los nombres de los jugadores que son internacionales.
+         * @return NO
+         */
+
+        console.log("EJERCICIO 3 -------------------------------------------------------------------------------");
+
+        function nombresJugadoresInternacionales(){
+            console.log(jugadores.filter(futbolista => futbolista.esInternacional).map(futbolista => futbolista.nombre));
+        }
+
+        nombresJugadoresInternacionales();
+
+        /**
+         * Ejercicio 4.
+         * Crea una funcion que retorne los nombres de los jugadores que juegan en la 'Premier League'
+         * @description
+         * @param
+         * @return Array nombres
+         */
+
+        console.log("EJERCICIO 4 -------------------------------------------------------------------------------");
+
+        function nombresJugadoresPremierLeague(){
+            return jugadores.filter(futbolista => futbolista.liga === "Premier League").map(futbolista => futbolista.nombre);
+        }
+
+        console.log(nombresJugadoresPremierLeague());
+        
+        /**
+         * Ejercicio 5.
+         * Crea una funcion que devuelva todos los delanteros que juegan en la 'Ligue 1'
+         * @return Array nombres
+         */
+
+        console.log("EJERCICIO 5 -------------------------------------------------------------------------------");
+
+        function nombresJugadoresDelanterosLigue1(){
+            return jugadores.filter(futbolista => futbolista.posicion === "Delantero" && futbolista.liga === "Ligue 1").map(futbolista => futbolista.nombre);
+        }
+
+        console.log(nombresJugadoresDelanterosLigue1());
+
+        /**
+         * Ejercicio 6. 
+         * Crea una funcion que muestre por pantalla los nombres de los jugadores junto a las siguiente estadisticas: 'asistencias', 'faltasSufridas', 'minutosJugados'
+         * @return NO
+         */
+
+        console.log("EJERCICIO 6 -------------------------------------------------------------------------------");
+
+        function nombresJugadoresEstadisticas(){
+            jugadores.forEach(futbolista => console.log(`${futbolista.nombre}: ${futbolista.estadisticas.asistencias} asistencias, ${futbolista.estadisticas.faltasSufridas} faltas sufridas, ${futbolista.estadisticas.minutosJugados}  minutos jugados`));
+        }
+
+        nombresJugadoresEstadisticas();
+
+        /**
+         * Ejercicio 7.
+         * Crea una funcion que retorne los nombres de los jugadores que hayan recibido alguna tarjeta roja
+         * @return array nombre
+         */
+
+        console.log("EJERCICIO 7 -------------------------------------------------------------------------------");
+
+        function nombresJugadoresConTarjetaRoja(){
+            console.log(jugadores.filter(futbolista => futbolista.estadisticas.tarjetas[1].cantidad > 0));
+        }
+
+        nombresJugadoresConTarjetaRoja();
+
+        /**
+         * Ejercicio 8.
+         * Crea una funcion que devuelva los jugadores que son internacionales y que han jugado mas de 5 partidos 
+         * @return NO
+         */
+
+        console.log("EJERCICIO 8 -------------------------------------------------------------------------------");
+
+        function nombresJugadoresInternacionalesJugadoMas5Partidos(){
+            console.log(jugadores.filter(futbolista => futbolista.esInternacional && futbolista.partidosJugados > 5).map(futbolista => futbolista.nombre));
+        }
+
+        nombresJugadoresInternacionalesJugadoMas5Partidos();
+    </script>
+</body>
+</html>
