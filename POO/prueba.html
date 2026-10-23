@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal {
+            name;
+
+            constructor(name = "") {
+                this.name = name;
+            }
+        }
+
+        let obj = new Animal("pato");  // name: "pato"
+        let obj2 = new Animal();       // name: ""
+
+        console.log(obj);
+        console.log(obj2);
+/*
+        class Personaje {
+            name;
+            energy = 10;
+
+            constructor(name) {
+                this.name = name;
+            }
+        }
+
+        const mario = new Personaje("Mario");     // { name: "Mario", energy: 10 }
+        mario.name;                               // "Mario" (se puede acceder desde fuera)
+        mario.name = "Evil Mario";
+        mario.name;                               // "Evil Mario" (se modificó desde fuera)
+*/
+/*
+        class Personaje {
+            #name;
+            energy = 10;
+
+            constructor(name) {
+                this.#name = name;
+            }
+        }
+
+        const mario = new Personaje("Mario");     // { name: "Mario", energy: 10 }
+
+        // Es incorrecto, el nombre correcto de la propiedad es #name
+        mario.name; // undefined
+
+        // Los dos siguientes dan el mismo error (no se puede acceder a la propiedad privada)
+        // Uncaught SyntaxError: Private field '#name' must be declared in an enclosing class
+        mario.#name;
+        mario.#name = "Evil Mario";
+
+        // Lo siguiente funcionará, pero ha creado otra propiedad 'name' que no es la misma que '#name'
+        mario.name = "Evil Mario";
+*/
+/*
+    class Personaje {
+        
+        constructor() {
+            const name = "Manz"; //es una variable
+            // name = "Manz";  // es una propiedad
+            console.log("Constructor: " + name);
+        }
+
+        method() {
+            console.log("Método: " + name);
+        }
+    }
+
+    const c = new Personaje(); // 'Constructor: Manz'
+
+    console.log(c.name);       // undefined
+    console.log(c.method());   // 'Método: '
+*/
+/*
+    class Personaje {
+        name = "Manz";           // ES2020+
+
+        constructor() {
+            this.name = "Manz";    // ES2015+
+            console.log("Constructor: " + this.name);
+        }
+
+        metodo() {
+            console.log("Método: " + this.name);
+        }
+    }
+
+    const c = new Personaje(); // 'Constructor: Manz'
+
+    c.name;     // 'Manz'
+    c.metodo(); // 'Método: Manz'
+
+*/
+/*
+    class Personaje {
+        name;
+        energy;
+        ciudad;
+
+        constructor(name, energy = 10, ciudad) {
+            this.name = name;
+            this.energy = energy;
+            this.ciudad = ciudad;
+        }
+
+        get status() {
+            return '⭐'.repeat(this.energy);
+        }
+    }
+
+    const mario = new Personaje("Mario",undefined,"Badajoz");
+    mario.energy    // 10
+    mario.status    // '⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐'
+
+    console.log(mario);
+*/
+
+    class Personaje {
+        name;
+        energy;
+
+        constructor(name, energy = 10) {
+            this.name = name;
+            this.energy = energy;
+        }
+
+        get status() {
+            return '⭐'.repeat(this.energy);
+        }
+
+        set status(stars) {
+            this.energy = stars.length;
+        }
+    }
+
+    const mario = new Personaje("Mario");
+    mario.energy    // 10
+    mario.status = '⭐⭐⭐'
+    mario.energy    // 3
+    mario.status    // '⭐⭐⭐'
+
+    //IMPORTANTE LOS METODOS STATIC
+
+    /*
+    class Animal {
+    static despedirse() {
+        return "Adiós";
+    }
+
+    hablar() {
+        return "Cuak";
+    }
+    }
+
+    Animal.despedirse();        // Método estático (no requiere instancia): 'Adiós'
+    Animal.hablar();            // Uncaught TypeError: Animal.hablar is not a function
+
+    const pato = new Animal();  // Creamos una instancia
+
+    pato.despedirse();          // Uncaught TypeError: pato.despedirse is not a function
+    pato.hablar();              // Método no estático (requiere instancia): 'Cuak'
+
+    */
+
+    </script>
+</body>
+</html>
