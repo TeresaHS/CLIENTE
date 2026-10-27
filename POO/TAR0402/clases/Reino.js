@@ -36,13 +36,12 @@ export class Reino{
     }
 
     //asigna el personaje como rey y lo imprime
-    coronarRey(person){
+    coronarRey(rey){
         if (rey instanceof Rey){
             this.#rey = rey;
             console.log(`${rey.getNombre} ha sido proclamado rey de ${this.#nombre}.`);
         }
         else console.log("Error. Tipo de atributo incorrecto.");
-        
     }
 
     //imprime el nombre de cada casa del reino
