@@ -26,7 +26,7 @@ export class Reino{
     get getRey(){return this.#rey;}
     set setRey(rey){this.#rey = rey;}
 
-    //añade una casa al reino e imprime confirmación
+    //añade una casa al reino e imprime confirmacion
     agregarCasa(casa){
         if (casa instanceof Casa){
             this.#casas.push(casa);
