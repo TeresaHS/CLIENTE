@@ -1,7 +1,7 @@
 //entidad individual con nombre, edad, estado vital, casa y arma
 export class Personaje{
     #nombre;
-  #edad;
+    #edad;
     #vivo;
     #casa;
 

@@ -1,3 +1,6 @@
+import { Rey } from "./personajesEspeciales/Rey.js";
+import { Casa } from "./Casa.js";
+
 //nombre del reino y que casas y rey contiene
 export class Reino{
     #nombre;
@@ -25,14 +28,21 @@ export class Reino{
 
     //añade una casa al reino e imprime confirmación
     agregarCasa(casa){
-        this.#casas.push(casa);
-        console.log(`La Casa ${casa.getNombre} ha sido añadida al Reino de ${this.#nombre}.`);
+        if (casa instanceof Casa){
+            this.#casas.push(casa);
+            console.log(`La Casa ${casa.getNombre} ha sido añadida al Reino de ${this.#nombre}.`);
+        }
+        else console.log("Error. Tipo de atributo incorrecto.");
     }
 
     //asigna el personaje como rey y lo imprime
-    coronarRey(personaje){
-        this.#rey = personaje;
-        console.log(`${personaje.getNombre} ha sido proclamado rey de ${this.#nombre}.`);
+    coronarRey(person){
+        if (rey instanceof Rey){
+            this.#rey = rey;
+            console.log(`${rey.getNombre} ha sido proclamado rey de ${this.#nombre}.`);
+        }
+        else console.log("Error. Tipo de atributo incorrecto.");
+        
     }
 
     //imprime el nombre de cada casa del reino

@@ -1,3 +1,5 @@
+import { Personaje } from "./Personaje.js";
+
 //agrupa personajes bajo un nombre y un lema
 export class Casa{
     #nombre;
@@ -25,12 +27,13 @@ export class Casa{
 
     //añade el personaje al array y le asigna esta casa. Imprime confirmación
     agregarMiembro(personaje){
-        if (personaje.getCasa && personaje.getCasa !== this) personaje.getCasa.setMiembros = personaje.getCasa.getMiembros.filter(m => m !== personaje);
-
-        if (!this.#miembros.includes(personaje)) this.#miembros.push(personaje);
-
-        personaje.setCasa = this;
-        console.log(`${personaje.getNombre} ha sido añadido a la Casa ${this.#nombre}.`);
+        if (personaje instanceof Personaje){
+            if (personaje.getCasa && personaje.getCasa !== this) personaje.getCasa.setMiembros = personaje.getCasa.getMiembros.filter(m => m !== personaje);
+            if (!this.#miembros.includes(personaje)) this.#miembros.push(personaje);
+            personaje.setCasa = this;
+            console.log(`${personaje.getNombre} ha sido añadido a la Casa ${this.#nombre}.`);
+        }
+        else console.log("Error. Tipo de atributo incorrecto.");
     }
 
     //recorre e imprime el nombre de cada miembro de la casa

@@ -21,6 +21,8 @@ export class Consejero extends Personaje{
 
     //imprime que el consejero aconseja al personaje recibido sobre su especialidad
     aconsejar(personaje){
-        console.log(`${this.getNombre} aconseja a ${personaje.getNombre} sobre ${this.#especialidad}.`);
+        //en el caso de las clases, se usa el instanceof en vez de typeof
+        if (personaje instanceof Personaje) console.log(`${this.getNombre} aconseja a ${personaje.getNombre} sobre ${this.#especialidad}.`);
+        else console.log("Error. Tipo de atributo incorrecto.");
     }
 }
