@@ -1,10 +1,10 @@
 import { Personaje } from "../Personaje.js";
 
-//entidad individual con nombre, edad, estado vital, casa y arma
+//entidad individual con nombre, edad, estado vital, casa y aniosReinado
 export class Rey extends Personaje{
     #aniosReinado;
 
-    //asigna nombre y edad por parametro y por defecto: vivo = true, casa = null, arma = null
+    //asigna nombre y edad por parametro y por defecto: vivo = true, casa = null, aniosReinado = null
     constructor(nombre=null, edad=null){
         super(nombre,edad);
         this.#aniosReinado = null;

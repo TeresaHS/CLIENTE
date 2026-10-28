@@ -1,6 +1,6 @@
 import { Personaje } from "../Personaje.js";
 
-//entidad individual con nombre, edad, estado vital, casa y arma
+//entidad individual con nombre, edad, estado vital, casa y especialidad
 export class Consejero extends Personaje{
     #especialidad;
 

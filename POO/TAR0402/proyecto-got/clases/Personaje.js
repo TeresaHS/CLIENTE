@@ -1,11 +1,11 @@
-//entidad individual con nombre, edad, estado vital, casa y arma
+//entidad individual con nombre, edad, estado vital y casa
 export class Personaje{
     #nombre;
     #edad;
     #vivo;
     #casa;
 
-    //asigna nombre y edad por parametro y por defecto: vivo = true, casa = null, arma = null
+    //asigna nombre y edad por parametro y por defecto: vivo = true, casa = null
     constructor(nombre=null, edad=null){
         this.#nombre = nombre;
         this.#edad = edad;
@@ -35,7 +35,7 @@ export class Personaje{
     //pone vivo = false e imprime que ha muerto
     morir(){
         this.#vivo = false;
-        console.log(`${this.#nombre} ha muerto.`);
+        console.log(` ${this.#nombre} ha muerto.`);
     }
 
 }
