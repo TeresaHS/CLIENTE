@@ -26,7 +26,7 @@ export class Reino{
     get getRey(){return this.#rey;}
     set setRey(rey){this.#rey = rey;}
 
-    //añade una casa al reino e imprime confirmacion
+    //añade una casa al reino e imprime confirmación
     agregarCasa(casa){
         if (casa instanceof Casa){
             this.#casas.push(casa);
@@ -42,6 +42,7 @@ export class Reino{
             console.log(`${rey.getNombre} ha sido proclamado rey de ${this.#nombre}.`);
         }
         else console.log("Error. Tipo de atributo incorrecto.");
+        
     }
 
     //imprime el nombre de cada casa del reino
