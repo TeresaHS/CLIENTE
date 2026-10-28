@@ -1,8 +1,8 @@
 import { Casa } from './clases/Casa.js';
 import { Arma } from './clases/Arma.js';
 import { Guerrero } from './clases/personajesEspeciales/Guerrero.js';
-import { Rey } from './clases/personajesEspeciales/Rey.js';
-import { Consejero } from './clases/personajesEspeciales/Consejero.js';
+import { Rey } from './clases/personajesEspeciales/Rey.js'; //no se usa pero viene en el enunciado
+import { Consejero } from './clases/personajesEspeciales/Consejero.js'; //no se usa pero viene en el enunciado
 import { Batalla } from './clases/Batalla.js';
 
 const casaStark = new Casa("Stark", "El invierno se acerca");
@@ -47,4 +47,7 @@ const batallaBastardos = new Batalla();
 batallaBastardos.iniciarBatalla(casaStark,casaLannister);
 
 batallaBastardos.mostrarGuerrerosMuertosEnCombate();
+
+// para probar que funciona :)
+// batallaBastardos.mostrarSupervivientes();
 
