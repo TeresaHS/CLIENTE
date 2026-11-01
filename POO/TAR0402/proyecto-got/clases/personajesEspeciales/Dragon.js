@@ -6,7 +6,7 @@ export class Dragon extends Personaje{
     #poder;
     #tipoAtaque;
 
-    constructor(nombre = null, poder = null, tipoAtaque = null) {
+    constructor(nombre = null, poder = null, tipoAtaque = null){
         super(nombre);
         this.setVida = 100;
         this.#poder = poder;
@@ -19,20 +19,20 @@ export class Dragon extends Personaje{
     get getTipoAtaque(){return this.#tipoAtaque;}
     set settipoAtaque(tipoAtaque){this.#tipoAtaque = tipoAtaque;}
 
-    atacar(objetivo) {
+    atacar(objetivo){
         
         if (objetivo instanceof CaminanteBlanco) {
             console.log(`${this.getNombre} lanza fuego sobre ${objetivo.getNombre} y lo destruye por completo.`);
             objetivo.morirPorFuego();
         }
-        else {
+        else{
             console.log(`${this.getNombre} ataca a ${objetivo.getNombre} causando ${this.#poder} puntos.`);
             objetivo.recibirDanio(this.#poder, { material: this.#tipoAtaque});
         }
     
     }
 
-    recibirDanio(puntos) {
+    recibirDanio(puntos){
         this.setVida = this.getVida - puntos;
         if (this.getVida <= 0) this.morir();
     }

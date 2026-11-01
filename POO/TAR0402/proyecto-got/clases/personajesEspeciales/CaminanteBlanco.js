@@ -4,7 +4,7 @@ export class CaminanteBlanco extends Personaje {
 
     #poderHelado;
 
-    constructor(nombre = null, poderHelado = null) {
+    constructor(nombre = null, poderHelado = null){
         super(nombre);
         this.setVida = 100;
         this.#poderHelado = poderHelado;
@@ -14,12 +14,12 @@ export class CaminanteBlanco extends Personaje {
     get getPoderHelado() { return this.#poderHelado; }
     set setPoderHelado(poderHelado) { this.#poderHelado = poderHelado; }
 
-    atacar(objetivo) {
+    atacar(objetivo){
         console.log(`${this.getNombre} ataca a ${objetivo.getNombre} con su poder helado (${this.#poderHelado}).`);
         objetivo.recibirDanio(this.#poderHelado, { material: "hielo" });
     }
 
-    recibirDanio(puntos, arma = {}) {
+    recibirDanio(puntos, arma = {}){
         
         if (arma.material === "fuego") this.morirPorFuego();
         
@@ -33,7 +33,7 @@ export class CaminanteBlanco extends Personaje {
         
     }
 
-    morirPorFuego() {
+    morirPorFuego(){
         this.setVida = 0;
         this.setVivo = false;
         console.log(` ${this.getNombre} ha sido reducido a cenizas.`);
