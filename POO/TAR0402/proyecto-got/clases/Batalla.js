@@ -1,21 +1,28 @@
 import { Casa } from "./Casa.js";
 import { Guerrero } from "./personajesEspeciales/Guerrero.js";
+import { Dragon } from "./personajesEspeciales/Dragon.js";
+import { CaminanteBlanco } from "./personajesEspeciales/CaminanteBlanco.js";
 
-//clase donde se gestiona la batalla entre casas
 export class Batalla{
 
     #guerrerosMuertos;
     #guerrerosSupervivientes;
     #enCurso;
 
-    //siempre se hace el new sin parámetros
     constructor(){
         this.#guerrerosMuertos = [];
         this.#guerrerosSupervivientes = [];
         this.#enCurso = false;
     }
 
-    //método que realiza la batalla
+    //getters && setters
+    get getGuerrerosMuertos(){return this.#guerrerosMuertos;}
+    set setGuerrerosMuertos(guerrerosMuertos){this.#guerrerosMuertos = guerrerosMuertos;}
+    get getGuerrerosSupervivientes(){return this.#guerrerosSupervivientes;}
+    set setGuerrerosSupervivientes(guerrerosSupervivientes){this.#guerrerosSupervivientes = guerrerosSupervivientes;}
+    get getEnCurso(){return this.#enCurso;}
+    set setEnCurso(enCurso){this.#enCurso = enCurso;}
+
     iniciarBatalla(casaA, casaB){
         
         if(!this.#enCurso){
@@ -67,14 +74,61 @@ export class Batalla{
         else console.log('Error. Ya hay una batalla en curso.');
     }
 
-    //imprime array de guerreros que han muerto en combate
     mostrarGuerrerosMuertosEnCombate(){
         console.log(this.#guerrerosMuertos);
     }
 
-    //imprime array de guerreros supervivientes
     mostrarSupervivientes(){
         console.log(this.#guerrerosSupervivientes);
+    }
+
+    batallaFinal(casaStark, khaleesi, caminantes) {
+
+        if (!this.#enCurso) {
+            this.#enCurso = true;
+
+            let aliados = [...casaStark.getMiembros.filter(m => m instanceof Guerrero && m.getVivo), ...khaleesi.getDragones.filter(d => d instanceof Dragon && d.getVivo)];
+            let enemigos = caminantes.filter(c => c instanceof CaminanteBlanco && c.getVivo);
+
+            if (aliados.length > 0 && enemigos.length > 0) {
+
+                console.log(`Aliados:`);
+                console.log(aliados);
+                console.log(`Enemigos:`);
+                console.log(enemigos);
+                console.log('\n ¡COMIENZA LA BATALLA FINAL!');
+
+                do {
+                    // siempre trabajo con el primero del array
+                    // shift - unshift + [] + push - pop
+                    
+                    let aliado = aliados[0];
+                    let enemigo = enemigos[0];
+
+                    console.log(`\n Nuevo enfrentamiento: ${aliado.getNombre} vs ${enemigo.getNombre}`);
+
+                    aliado.atacar(enemigo);
+
+                    if (enemigo.getVivo) enemigo.atacar(aliado);
+
+                    console.log(`${aliado.getNombre}: ${aliado.getVida} | ${enemigo.getNombre}: ${enemigo.getVida}`);
+
+                    if (!aliado.getVivo) this.#guerrerosMuertos.push(aliados.shift());
+                    if (!enemigo.getVivo) this.#guerrerosMuertos.push(enemigos.shift());
+
+                } while (aliados.length > 0 && enemigos.length > 0);
+
+                if (aliados.length === 0) console.log(`\n Los Caminantes Blancos han ganado. El invierno se extiende.`);
+                else console.log(`\n ¡Los vivos han ganado! El fuego y el acero valyrio triunfan.`);
+
+                this.#guerrerosSupervivientes.push(...aliados, ...enemigos);
+
+            }
+            else console.log('Error. Algún ejército está vacío.');
+
+            this.#enCurso = false;
+        }
+        else console.log('Error. Ya hay una batalla en curso.');
     }
 
 }
