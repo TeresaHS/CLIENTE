@@ -107,8 +107,13 @@ export class Batalla{
 
                     console.log(`\n Nuevo enfrentamiento: ${aliado.getNombre} vs ${enemigo.getNombre}`);
 
-                    aliado.atacar(enemigo);
+                    if (aliado instanceof Guerrero){
+                        if (aliado.getArma.getTipo === "acero valyrio") aliado.atacar(enemigo);
+                        else enemigo.recibirDanio(0, { material: aliado.getArma.getTipo });
 
+                    }
+                    else aliado.atacar(enemigo);
+                    
                     if (enemigo.getVivo) enemigo.atacar(aliado);
 
                     console.log(`${aliado.getNombre}: ${aliado.getVida} | ${enemigo.getNombre}: ${enemigo.getVida}`);

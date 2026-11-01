@@ -24,9 +24,7 @@ export class CaminanteBlanco extends Personaje {
         if (arma.material === "fuego") this.morirPorFuego();
         
         else if (arma.material === "acero valyrio"){
-            this.setVida = this.getVida - puntos;
-            console.log(`${this.getNombre} recibe ${puntos} de daño con acero valyrio.`);
-            
+            this.setVida = this.getVida - puntos;            
             if (this.getVida <= 0) this.morir();
         }
         else console.log(`${this.getNombre} es inmune: solo el acero valyrio o el fuego pueden herirlo.`);
