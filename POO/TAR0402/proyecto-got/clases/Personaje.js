@@ -10,7 +10,7 @@ export class Personaje{
         this.#nombre = nombre;
         this.#edad = edad;
         this.#vivo = true;
-        this.#vida = true;
+        this.#vida = 100;
         this.#casa = null;
     }
 

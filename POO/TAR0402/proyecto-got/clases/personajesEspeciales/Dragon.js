@@ -8,7 +8,6 @@ export class Dragon extends Personaje{
 
     constructor(nombre = null, poder = null, tipoAtaque = null){
         super(nombre);
-        this.setVida = 100;
         this.#poder = poder;
         this.#tipoAtaque = tipoAtaque;
     }

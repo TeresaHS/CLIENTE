@@ -9,7 +9,6 @@ export class Guerrero extends Personaje{
         this.setVivo = vivo;
         this.setCasa = casa;
         this.#arma = null;
-        this.setVida = 100;
         this.#arma = arma;
     }
 
