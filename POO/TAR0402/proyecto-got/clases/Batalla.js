@@ -109,10 +109,13 @@ export class Batalla{
 
                     if (aliado instanceof Guerrero){
                         if (aliado.getArma.getTipo === "acero valyrio") aliado.atacar(enemigo);
-                        else enemigo.recibirDanio(0, { material: aliado.getArma.getTipo });
+                        else{
+                            console.log(`${aliado.getNombre} intenta atacar a ${enemigo.getNombre} con ${aliado.getArma.getNombre} de ${aliado.getArma.getTipo}`);
+                            enemigo.recibirDanio(0, { material: aliado.getArma.getTipo });
+                        } 
 
                     }
-                    else aliado.atacar(enemigo);
+                    else if (aliado instanceof Dragon) aliado.atacar(enemigo);
                     
                     if (enemigo.getVivo) enemigo.atacar(aliado);
 
