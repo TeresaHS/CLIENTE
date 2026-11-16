@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*input,
+        textarea {
+        padding: 5px;
+        color: #fff;
+        }
+
+        ::placeholder {
+        color: darkgreen;
+        }
+
+        :is(input, textarea):invalid {
+        background: red;
+        }
+
+        :is(input, textarea):valid {
+        background: green;
+        }*/
+        /*
+        input,
+        textarea {
+        padding: 5px;
+        color: #fff;
+        }
+
+        ::placeholder {
+        color: darkgreen;
+        }
+
+        :is(input, textarea):invalid {
+        background: red;
+        }
+
+        :is(input, textarea):valid {
+        background: green;
+        }*/
+        /*
+        :is(input,textarea):invalid {
+        background: red;
+        color: #fff;
+        }
+
+        ::placeholder {
+        color: darkred;
+        }*/
+
+        :is(input,textarea):invalid {
+        background: red;
+        color: #fff;
+        }
+
+        ::placeholder {
+        color: darkred;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <form method="post" action="/send/">
+        Usuario:
+        <input type="text" name="username" placeholder="Por ejemplo, Juan"
+                minlength="5" maxlength="40">
+        Password:
+        <input type="password" name="password" placeholder="Contraseña" minlength="11">
+    </form>
+
+    <form method="post" action="/send/">
+        Edad:
+        <input type="number" name="age" placeholder="25"
+                min="18" max="60">
+        Fecha de inicio:
+        <input type="date" name="date" placeholder="2024-07-22" min="2024-01-01" max="2024-12-01">
+    </form>
+
+    <form method="post" action="/send/">
+        Nombre:
+        <input type="text" name="username" pattern="a.+" required>
+    </form>
+
+    <form method="post" action="/send/">
+        <input type="text" name="username" placeholder="ManzDev"
+                minlength="5" maxlength="40" required pattern="[A-Za-z0-9]+">
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <style>
+        /*
+        lo he puesto simplemente para ver que si se crea dentro del contenedor y que esté bonito :)
+        #crear{
+            margin: 10px;
+        }
+        .tarjeta{
+            background-color: rgb(155, 191, 255);
+            padding: 10px;
+            margin: 10px;
+        }
+        #contenedor{
+            background-color: white;
+            padding: 10px;
+        }
+        body{
+            background-color: rgb(93, 152, 255);
+        }*/
+    </style>
+</head>
+<body>
+    <button id="crear">Crear tarjeta</button>
+    <div id="contenedor"></div>
+    <script>
+        //Cada vez que se pulse "Crear tarjeta":
+        //Crea un <div> con clase tarjeta
+        //Dentro añade un <p> con el texto "Soy una tarjeta"
+        //Añade un botón "Eliminar" dentro de cada tarjeta
+        //Si se hace clic en "Eliminar", la tarjeta se borra del DOM
+
+        document.getElementById("crear").addEventListener("click", () => {
+            
+            let tarjeta = document.createElement("div");
+            tarjeta.classList.add("tarjeta");
+
+            let parrafo = document.createElement("p");
+            parrafo.innerText = "Soy una tarjeta";
+
+            let boton = document.createElement("button");
+            boton.innerText = "Eliminar";
+
+            boton.addEventListener("click", () => {
+                tarjeta.remove();
+            });
+
+            tarjeta.appendChild(parrafo);
+            tarjeta.appendChild(boton);
+
+            document.getElementById("contenedor").appendChild(tarjeta);
+
+        });
+    </script>
+</body>
+</html>

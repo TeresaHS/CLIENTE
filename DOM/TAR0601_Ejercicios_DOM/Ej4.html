@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h2 id="contador">0</h2>
+    <button id="sumar">+</button>
+    <button id="restar">-</button>
+    <button id="reset">Reset</button>
+    <script>
+        //Implementa un contador:
+        //“+” aumenta en 1
+        //“–” resta 1
+        //“Reset” vuelve a 0
+        //El número debe actualizarse en el <h2>
+
+        let valor = 0; 
+
+        document.getElementById("sumar").addEventListener("click", () => {
+            document.getElementById("contador").innerText = ++valor;
+        });
+
+        document.getElementById("restar").addEventListener("click", () => {
+            document.getElementById("contador").innerText = --valor;
+        });
+
+        document.getElementById("reset").addEventListener("click", () => {
+            valor = 0;
+            document.getElementById("contador").innerText = valor;
+        });
+    </script>
+</body>
+</html>

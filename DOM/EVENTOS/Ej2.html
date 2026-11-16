@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 2</title>
+
+    <style>
+        #caja{
+            width: 100px;
+            height: 100px;
+        }
+        .caja-apagada{
+            background-color: grey;
+        }
+        .caja-encendida{
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Toggle de Clase</h1>
+
+    <div class="caja-apagada" id="caja"></div>
+    <button id="alternar">Alternar</button>
+
+    <script>
+        const alternar = document.getElementById("alternar");
+        const caja = document.getElementById("caja");
+
+        alternar.addEventListener("click", () => {
+            caja.classList.toggle("caja-apagada");
+            caja.classList.toggle("caja-encendida");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 5</title>
+
+    <style>
+        #cuadrado {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reacción de Puntero (Hover)</h1>
+
+    <div id="cuadrado"></div>
+
+
+    <script>
+        const cuadrado = document.getElementById("cuadrado");
+
+        cuadrado.addEventListener("mouseover", () => {
+            cuadrado.style.backgroundColor = "red";
+        });
+
+        cuadrado.addEventListener("mouseout", () => {
+            cuadrado.style.backgroundColor = "blue";
+        });
+    </script>
+</body>
+</html>

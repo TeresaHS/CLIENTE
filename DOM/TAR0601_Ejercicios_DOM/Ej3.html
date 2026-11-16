@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <input type="text" id="entrada" placeholder="Escribe un elemento">
+    <button id="agregar">Agregar</button>
+    <ul id="lista"></ul>
+    <script>
+        //Al pulsar el botón "Agregar":
+        //Crea un <li> con el texto del input.
+        //Vacía el input.
+        //Si el input está vacío, no agregues nada.
+
+        let input = document.getElementById("entrada");
+        let list = document.getElementById("lista");
+
+        document.getElementById("agregar").addEventListener("click", () => {
+            if(input.value.trim() !== ""){
+                let item = document.createElement("li");
+                item.innerText = input.value;
+
+                list.appendChild(item);
+
+                input.value = "";
+            }
+        });
+    </script>
+</body>
+</html>

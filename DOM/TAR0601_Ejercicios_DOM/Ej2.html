@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <p id="texto">Este texto debe poder ocultarse.</p>
+    <button id="boton">Ocultar</button>
+    <script>
+        //Cada vez que el usuario haga clic en el botón:
+        //Si el texto está visible, ocúltalo y cambia el texto del botón a "Mostrar"
+        //Si está oculto, muéstralo y cambia el texto del botón a "Ocultar"
+
+        let texto = document.getElementById("texto");
+        let boton = document.getElementById("boton");
+
+        boton.addEventListener("click", () => {
+            texto.hidden = !texto.hidden; //en el ejemplo de clase lo hace con block y none, pero así pongo ! directamente
+            boton.innerText = texto.hidden ? "Mostrar" : "Ocultar";
+        });
+    </script>
+</body>
+</html>

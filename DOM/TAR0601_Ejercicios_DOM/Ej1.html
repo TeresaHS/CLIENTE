@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1 id="titulo">Bienvenido</h1>
+    <p class="mensaje">Texto original</p>
+    <button id="cambiar">Cambiar texto</button>
+    <script>
+        //Cuando el usuario pulse el botón:
+        //Cambia el texto del <h1> a "DOM Modificado"
+        //Cambia el color del <p> a azul
+        //Cambia el fondo del <body> a un color suave
+
+        document.getElementById("cambiar").addEventListener("click", () => {
+            document.getElementById("titulo").innerText = "DOM Modificado";
+            document.querySelector(".mensaje").style.color = "blue";
+            document.body.style.backgroundColor = "wheat";
+        });
+    </script>
+</body>
+</html>
