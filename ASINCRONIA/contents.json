@@ -1,0 +1,10 @@
+{
+  "nombre": "Ejemplo",
+  "edad": 25,
+  "activo": true,
+  "hobbies": ["leer", "programar"],
+  "direccion": {
+    "ciudad": "Madrid",
+    "pais": "España"
+  }
+}

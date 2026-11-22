@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //CALLBACK
+        /*
+        function cargarDatos(callback){
+            console.log("Iniciando carga de datos...");
+            setTimeout(() => {
+                console.log("Datos cargados");
+                callback();
+            }, 2000);
+        }
+
+        function mostrarMensaje(){
+            console.log("¡Carga completa!");
+        }
+
+        cargarDatos(mostrarMensaje);
+        */
+        // --------------------------------------------------------------------------------
+        //PROMESAS
+        /*
+        function cargarDatos(){
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    let exito = true; //Cambiar a false para probar el rechazo
+                    if(exito) resolve("Datos cargados con éxito.");
+                    else reject("Error al cargar los datos.");
+                }, 2000);
+            });
+        }
+
+        cargarDatos()
+            .then(mensaje => console.log(mensaje)) //Se ejecuta si la promesa se resuelve
+            .catch(error => console.error(error)); //Se ejecuta si la promesa se rechaza
+        */
+        // --------------------------------------------------------------------------------
+        //async y await
+        //
+        async function ejecutarTareas(){
+            console.log("Iniciando tareas...");
+            await tareas1();
+            await tareas2();
+            await tareas3();
+            console.log("Todas las tareas completadas con async/await.");
+        }
+
+        function tareas1(){
+            //setTimeout(() => {
+                console.log("tarea1");
+            //}, 2000);
+        }
+
+        function tareas2(){
+            console.log("tarea2");
+        }
+
+        function tareas3(){
+            console.log("tarea3");
+        }
+
+        ejecutarTareas();
+        //
+    </script>
+</body>
+</html>

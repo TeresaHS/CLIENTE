@@ -1,0 +1,63 @@
+Un robot es una máquina programable capaz de realizar tareas de forma automática, total o parcialmente. Puede ser físico (con cuerpo y actuadores) o virtual (software que ejecuta acciones de manera autónoma).
+
+Características principales:
+
+Sensores: captan información del entorno (luz, temperatura, distancia, cámaras, etc.).
+
+Actuadores: permiten moverse o manipular objetos (motores, brazos, ruedas, pinzas).
+
+Control y programación: un procesador o sistema que decide qué hacer según los datos recibidos.
+
+Autonomía variable: desde robots teleoperados hasta robots que toman decisiones por sí mismos.
+
+Tipos comunes:
+
+Industriales: brazos robóticos en fábricas para soldar, ensamblar o pintar.
+
+De servicio: limpieza, logística, agricultura, atención al cliente.
+
+Médicos: cirugía asistida, rehabilitación.
+
+Exploración: espacio, fondos marinos, zonas de desastre.
+
+Educativos y de investigación: plataformas para aprender robótica.
+
+Domésticos: aspiradoras, robots de cocina, juguetes programables.
+
+Componentes típicos:
+
+Estructura o chasis.
+
+Fuente de energía (batería, cable).
+
+Sensores y actuadores.
+
+Unidad de control (microcontrolador, computadora).
+
+Software de control y comunicación.
+
+Aplicaciones:
+
+Manufactura y automatización.
+
+Medicina y asistencia.
+
+Transporte y logística.
+
+Exploración y rescate.
+
+Educación y entretenimiento.
+
+Tareas domésticas.
+
+Consideraciones:
+
+Seguridad: interacción con personas y entornos.
+
+Ética y privacidad: uso de datos y vigilancia.
+
+Empleo: automatización de tareas y necesidad de nuevas habilidades.
+
+Mantenimiento y costos.
+
+En resumen, los robots son herramientas programables que combinan sensores, actuadores y control para realizar tareas de manera automática, con aplicaciones cada vez más amplias en industria, servicios, salud, exploración y vida cotidiana.
